@@ -16,14 +16,41 @@ Park.prototype.removeDino = function (dino) {
 }
 
 Park.prototype.greatestAttraction = function () {
+  let highestGuestDino
   let dino;
+  let sortedGuest = [];
   let dinos = this.dinosaurs
   for (dino of dinos) {
-    if (dino.guestsAttractedPerDay > dino.guestsAttractedPerDay) {
+    sortedGuest.push(dino.guestsAttractedPerDay)
+  }
+  sortedGuest.sort(function(a, b){return b-a});
+  for (dino of dinos) {
+    if (dino.guestsAttractedPerDay === sortedGuest[0]) {
+      highestGuestDino = dino
     }
   }
-  return dino
+  return highestGuestDino
 }
+
+// Park.prototype.greatestAttraction = function () {
+//   let dino;
+//   let dinos = this.dinosaurs
+//   for (dino of dinos) {
+//     if (dino.guestsAttractedPerDay > dino.guestsAttractedPerDay) {
+//     }
+//   }
+//   return dino
+// }
+//
+// Park.prototype.greatestAttraction = function () {
+//   let dinos = this.dinosaurs
+//   for ( let currentDino of dinos) {
+//     if (currentDino.guestsAttractedPerDay > currentDino.guestsAttractedPerDay) {
+//       dino = currentDino
+//     }
+//   }
+//   return dino
+// }
 
 Park.prototype.findSpecies = function (species) {
   let dino;

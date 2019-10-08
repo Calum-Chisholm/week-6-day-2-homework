@@ -47,10 +47,10 @@ describe('Park', function() {
     jurassicPark.newDino(dino1);
     jurassicPark.newDino(dino2);
     const actual = jurassicPark.greatestAttraction();
-    assert.deepStrictEqual(actual, dino1)
+    assert.strictEqual(actual, dino1)
   });
 
-  it('should be able to find all dinosaurs of a particular species', function () {
+  xit('should be able to find all dinosaurs of a particular species', function () {
     jurassicPark.newDino(dino1);
     jurassicPark.newDino(dino2);
     const actual = jurassicPark.findSpecies('carnivore');
