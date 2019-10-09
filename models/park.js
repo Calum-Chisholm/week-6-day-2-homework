@@ -54,4 +54,21 @@ Park.prototype.dailyVisitors = function () {
   return total
 }
 
+Park.prototype.yearlyVisitors = function () {
+  let total = 0;
+  let dino;
+  let dinos = this.dinosaurs;
+  for ( dino of dinos) {
+    total += dino.guestsAttractedPerDay * 365
+  }
+  return total
+}
+
+Park.prototype.yearlyRevenue = function () {
+   total = this.yearlyVisitors() * this.price;
+   return total;
+}
+
+
+
 module.exports = Park;
