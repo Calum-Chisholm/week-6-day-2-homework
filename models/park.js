@@ -32,26 +32,6 @@ Park.prototype.greatestAttraction = function () {
   return highestGuestDino
 }
 
-// Park.prototype.greatestAttraction = function () {
-//   let dino;
-//   let dinos = this.dinosaurs
-//   for (dino of dinos) {
-//     if (dino.guestsAttractedPerDay > dino.guestsAttractedPerDay) {
-//     }
-//   }
-//   return dino
-// }
-//
-// Park.prototype.greatestAttraction = function () {
-//   let dinos = this.dinosaurs
-//   for ( let currentDino of dinos) {
-//     if (currentDino.guestsAttractedPerDay > currentDino.guestsAttractedPerDay) {
-//       dino = currentDino
-//     }
-//   }
-//   return dino
-// }
-
 Park.prototype.findDiet = function (diet) {
   let dietDino = [];
   let dino;
@@ -64,5 +44,14 @@ Park.prototype.findDiet = function (diet) {
   return dietDino
 }
 
+Park.prototype.dailyVisitors = function () {
+  let total = 0;
+  let dino;
+  let dinos = this.dinosaurs;
+  for ( dino of dinos) {
+    total += dino.guestsAttractedPerDay
+  }
+  return total
+}
 
 module.exports = Park;
