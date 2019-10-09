@@ -52,16 +52,17 @@ Park.prototype.greatestAttraction = function () {
 //   return dino
 // }
 
-Park.prototype.findSpecies = function (species) {
+Park.prototype.findDiet = function (diet) {
+  let dietDino = [];
   let dino;
   let dinos = this.dinosaurs
   for (dino of dinos) {
-    if (dino.species === species) {
+    if (dino.diet === diet) {
+      dietDino.push(dino)
     }
   }
-  return dino
+  return dietDino
 }
-
 
 
 module.exports = Park;
